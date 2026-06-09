@@ -14,6 +14,13 @@ public class PDI extends Trabajador {
         this.horasDocencia = horasDocencia;
     }
 
+    public PDI(String nombre, String direccion, LocalDate fechanacimiento, String puesto, double salario, LocalDate fechaingreso, String categoria, String especialidad, int horasDocencia, Cuentacorriente cuenta) {
+        super(nombre, direccion, fechanacimiento, fechaingreso, salario, puesto, cuenta);
+        this.categoria = categoria;
+        this.especialidad = especialidad;
+        this.horasDocencia = horasDocencia;
+    }
+
     //metodos
     public void investigar(String tema) {
         System.out.println("el profesor " + getnombre() + " investiga el tema " + tema);

@@ -14,6 +14,13 @@ public class Estudiantedoctorado extends Estudiante {
         this.directortesis = directortesis;
     }
 
+    public Estudiantedoctorado(String nombre, LocalDate fechanacimiento, String direccion, String matricula, double promedio, LocalDate fechaingreso, String programa, String tematesis, String directortesis, Cuentaahorro cuenta) {
+        super(nombre, direccion, fechanacimiento, matricula, promedio, fechaingreso, cuenta);
+        this.programa = programa;
+        this.tematesis = tematesis;
+        this.directortesis = directortesis;
+    }
+
     //metodos
     public void realizartesis() {
         System.out.println("el estudiante " + getnombre() + "continua trabajando en su investigacion  " + tematesis + " bajo la direccion " + directortesis);

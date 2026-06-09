@@ -11,8 +11,17 @@ public class Main {
         //crea departamentos 
 
         Departamento departamentocomputacion = new Departamento("computacion", "num189", "edificio AT");
-        //instancia doctores 
+        // CUENTAS BANCARIAS NUEVAS 
+        Cuentacorriente cuentaPas = new Cuentacorriente(5000, "1233666", 0.01);
+        Cuentacorriente cuentaPDI = new Cuentacorriente(12000, "22334455", 0.01);
+        Cuentaahorro cuentaGrado = new Cuentaahorro(10000, "9898839839", 2000, 0, 5.0);
+        Cuentaahorro cuentaDoctorado = new Cuentaahorro(12000, "44889966", 1500, 0, 4.5);
 
+        //trabajador PAS CON CUENTA CORRIENTE
+        Pas trabajadorPas = new Pas("Carlos Gomez", "AV. CENTRAL 123", LocalDate.of(2010, 4, 12), "Administrador en sistemas", 16000, LocalDate.of(2020, 3, 8), "escolares", 2, "matutino", cuentaPas);
+        PDI profesorpdoPdi = new PDI("ARMANDO LOPEZ", "SANTA MARTA", LocalDate.of(2003, 3, 1), "profesor titular", 5000, LocalDate.of(2015, 5, 9), "Titular c", "computacion", 12, cuentaPDI);
+
+        //instancia doctores 
         Doctor doc1 = new Doctor("inteligencia artificial", "UAM ", 2022);
         Doctor doc2 = new Doctor("Systemas distribuidos", "UNAM", 2018);
         //METODOS DE DOCTOR 
@@ -21,13 +30,8 @@ public class Main {
             doc1.registrartitulo();
         }
         System.out.println(doc1.toString());
+        System.out.println(doc2.toString());
         System.out.println();
-        //Pas
-
-        Pas trabajadorPas = new Pas("Carlos Gomez ", "AV. CENTRAL 123", LocalDate.of(2010, 4, 12), "Administrador en sistemas", 16000, LocalDate.of(2020, 3, 8), "escolares", 2, "matutino");
-        //PDI
-
-        PDI profesorpdoPdi = new PDI("ARMANDO LOPEZ ", "SANTA MARTA ", LocalDate.of(2003, 3, 1), "profesor titular", 5000, LocalDate.of(2015, 5, 9), "Titular c", "computacion", 12);
         //contratar trabajadores
 
         System.out.println("registrando personal de universidad");
@@ -52,10 +56,10 @@ public class Main {
         System.out.println();
         //estudiantes 
 
-        Estudiantegrado estGrado = new Estudiantegrado("laura ", LocalDate.of(2003, 7, 19), "Chimalhuacan ", "22353788", 9.2, LocalDate.of(2023, 9, 18), "tesis", 310, true);
+        Estudiantegrado estGrado = new Estudiantegrado("laura", LocalDate.of(2003, 7, 19), "Chimalhuacan", "22353788", 9.2, LocalDate.of(2023, 9, 18), "tesis", 310, true, cuentaGrado);
         //doctorado
 
-        Estudiantedoctorado estDoc = new Estudiantedoctorado("luiz martinez ", LocalDate.of(1996, 1, 5), "universidad 500", "262626777", 9.6, LocalDate.of(2026, 6, 8), "ciencias de la computacion", "criptografia", "armando lopez");
+        Estudiantedoctorado estDoc = new Estudiantedoctorado("luiz martinez", LocalDate.of(1996, 1, 5), "universidad 500", "262626777", 9.6, LocalDate.of(2026, 6, 8), "ciencias de la computacion", "criptografia", "armando lopez", cuentaDoctorado);
         //registrar estudiantes 
 
         System.out.println(" registro de estudiantes en universidad");
@@ -81,6 +85,7 @@ public class Main {
         System.out.println(departamentocomputacion.toString());
         System.out.println(estGrado.toString());
         System.out.println(estDoc.toString());
+
     }
 
 }

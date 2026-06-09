@@ -6,12 +6,19 @@ public class Estudiante extends Persona {
     private String matricula;
     private double promedio;
     private LocalDate fechaingreso;
+    private Cuentaahorro cuenta;
 
     public Estudiante(String nombre, String direccion, LocalDate fechanacimiento, String matricula, double promedio, LocalDate fechaingreso) {
         super(nombre, fechanacimiento, direccion);
         this.matricula = matricula;
         this.promedio = promedio;
         this.fechaingreso = fechaingreso;
+        this.cuenta = null;
+    }
+
+    public Estudiante(String nombre, String direccion, LocalDate fechanacimiento, String matricula, double promedio, LocalDate fechaingreso, Cuentaahorro cuenta) {
+        this(nombre, direccion, fechanacimiento, matricula, promedio, fechaingreso);
+        this.cuenta = cuenta;
     }
 
     //metodos
@@ -58,5 +65,13 @@ public class Estudiante extends Persona {
 
     public void setfechaingreso(LocalDate fechaingreso) {
         this.fechaingreso = fechaingreso;
+    }
+
+    public Cuentaahorro getCuenta() {
+        return cuenta;
+    }
+
+    public void setCuenta(Cuentaahorro cuenta) {
+        this.cuenta = cuenta;
     }
 }

@@ -7,13 +7,19 @@ public class Trabajador extends Persona {
     private LocalDate fechaingreso;
     private double salario;
     private String puesto;
+    private Cuentacorriente cuenta;
 
     public Trabajador(String nombre, String direccion, LocalDate fechanacimiento, LocalDate fechaingreso, double salario, String puesto) {
         super(nombre, fechanacimiento, direccion);
         this.salario = salario;
         this.puesto = puesto;
         this.fechaingreso = fechaingreso;
+        this.cuenta = null;
+    }
 
+    public Trabajador(String nombre, String direccion, LocalDate fechanacimiento, LocalDate fechaingreso, double salario, String puesto, Cuentacorriente cuenta) {
+        this(nombre, direccion, fechanacimiento, fechaingreso, salario, puesto);
+        this.cuenta = cuenta;
     }
 
     //metodos 
@@ -55,6 +61,14 @@ public class Trabajador extends Persona {
 
     public void setpuesto(String puesto) {
         this.puesto = puesto;
+    }
+
+    public Cuentacorriente getCuenta() {
+        return cuenta;
+    }
+
+    public void setCuenta(Cuentacorriente cuenta) {
+        this.cuenta = cuenta;
     }
 
 }

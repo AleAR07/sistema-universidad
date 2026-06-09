@@ -14,6 +14,13 @@ public class Estudiantegrado extends Estudiante {
         this.serviciosocial = serviciosocial;
     }
 
+    public Estudiantegrado(String nombre, LocalDate fechanacimiento, String direccion, String matricula, double promedio, LocalDate fechaingreso, String titulacion, int creditos, boolean serviciosocial, Cuentaahorro cuenta) {
+        super(nombre, direccion, fechanacimiento, matricula, promedio, fechaingreso, cuenta);
+        this.titulacion = titulacion;
+        this.creditos = creditos;
+        this.serviciosocial = serviciosocial;
+    }
+
     public void realizarproyecto() {
         System.out.println("el estudiante " + getnombre() + " esta desarrollando su proyecto de titulacion en la modalidad " + titulacion);
     }

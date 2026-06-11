@@ -1,5 +1,4 @@
 
-
 public class Doctor {
 
     private String especialidad;
@@ -21,6 +20,12 @@ public class Doctor {
 
     public void registrartitulo() {
         System.out.println("el titulo fue obtenido en el año " + anioobtencion);
+    }
+
+    @Override
+
+    public String toString() {
+        return "Doctor{" + "especialidad='" + especialidad + '\'' + ", universidad='" + universidad + '\'' + ", anioobtencion=" + anioobtencion + '}';
     }
 
     //getter y setter

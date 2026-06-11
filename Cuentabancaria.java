@@ -36,6 +36,11 @@ public class Cuentabancaria implements Transaccionable {
             System.out.println("no valido, monto mayor al saldo o retiro de 0");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Cuentabancaria{" + "saldo=" + saldo + ", numeroCuenta='" + numeroCuenta + '\'' + '}';
+    }
 //getter y setter
 
     public String getNumeroCuenta() {

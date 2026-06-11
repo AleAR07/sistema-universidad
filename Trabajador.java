@@ -14,7 +14,7 @@ public class Trabajador extends Persona {
         this.salario = salario;
         this.puesto = puesto;
         this.fechaingreso = fechaingreso;
-        this.cuenta = null;
+
     }
 
     public Trabajador(String nombre, String direccion, LocalDate fechanacimiento, LocalDate fechaingreso, double salario, String puesto, Cuentacorriente cuenta) {
@@ -71,4 +71,8 @@ public class Trabajador extends Persona {
         this.cuenta = cuenta;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + " | Puesto: " + puesto + " | Antigüedad: " + calcularAntiguedad() + " años | Cuenta: " + (cuenta != null ? cuenta.obtenerNumero() : "Ninguna");
+    }
 }

@@ -40,6 +40,11 @@ public class Departamento {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Departamento{" + "nombre=" + nombre + ", codigo=" + codigo + ", ubicacion=" + ubicacion + '}';
+    }
+
     //getter y setter
     public String getNombre() {
         return nombre;

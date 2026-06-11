@@ -74,4 +74,9 @@ public class Estudiante extends Persona {
     public void setCuenta(Cuentaahorro cuenta) {
         this.cuenta = cuenta;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " | Matrícula: " + matricula + " | Promedio: " + promedio + " | Fecha de Ingreso: " + fechaingreso + " | Beca: $" + calcularbeca() + " | Cuenta: " + (cuenta != null ? cuenta.obtenerNumero() : "Ninguna");
+    }
 }

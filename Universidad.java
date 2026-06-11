@@ -48,6 +48,11 @@ public class Universidad {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Universidad{" + "nombre=" + nombre + ", ciudad=" + ciudad + ", fundacion=" + fundacion + '}';
+    }
+
     //getter y setter
     public String getNombre() {
         return nombre;

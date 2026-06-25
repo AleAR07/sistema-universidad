@@ -18,8 +18,8 @@ public class Main {
         Cuentaahorro cuentaDoctorado = new Cuentaahorro(12000, "44889966", 1500, 0, 4.5);
 
         //trabajador PAS CON CUENTA CORRIENTE
-        Pas trabajadorPas = new Pas("Carlos Gomez", "AV. CENTRAL 123", LocalDate.of(2010, 4, 12), "Administrador en sistemas", 16000, LocalDate.of(2020, 3, 8), "escolares", 2, "matutino", cuentaPas);
-        PDI profesorpdoPdi = new PDI("ARMANDO LOPEZ", "SANTA MARTA", LocalDate.of(2003, 3, 1), "profesor titular", 5000, LocalDate.of(2015, 5, 9), "Titular c", "computacion", 12, cuentaPDI);
+        Pas trabajadorPas = new Pas("Carlos Gomez", "AV. CENTRAL 123", LocalDate.of(2010, 4, 12),LocalDate.of(2020, 3, 8), 16000, "Administrador en sistemas",cuentaPas, "escolares", 2, "matutino");
+        PDI profesorpdoPdi = new PDI("ARMANDO LOPEZ", "SANTA MARTA", LocalDate.of(2003, 3, 1),  LocalDate.of(2015, 5, 9), 5000, "profesor titular",cuentaPDI, "Titular c", "computacion", 12);
 
         //instancia doctores 
         Doctor doc1 = new Doctor("inteligencia artificial", "UAM ", 2022);
@@ -56,10 +56,10 @@ public class Main {
         System.out.println();
         //estudiantes 
 
-        Estudiantegrado estGrado = new Estudiantegrado("laura", LocalDate.of(2003, 7, 19), "Chimalhuacan", "22353788", 9.2, LocalDate.of(2023, 9, 18), "tesis", 310, true, cuentaGrado);
+        Estudiantegrado estGrado = new Estudiantegrado("laura", LocalDate.of(2003, 7, 19), "Chimalhuacan", "22353788", 9.2, LocalDate.of(2023, 9, 18), cuentaGrado, "tesis", 310, true);
         //doctorado
 
-        Estudiantedoctorado estDoc = new Estudiantedoctorado("luiz martinez", LocalDate.of(1996, 1, 5), "universidad 500", "262626777", 9.6, LocalDate.of(2026, 6, 8), "ciencias de la computacion", "criptografia", "armando lopez", cuentaDoctorado);
+        Estudiantedoctorado estDoc = new Estudiantedoctorado("luiz martinez", LocalDate.of(1996, 1, 5), "universidad 500", "262626777", 9.6, LocalDate.of(2026, 6, 8), cuentaDoctorado, "ciencias de la computacion", "criptografia", "armando lopez");
         //registrar estudiantes 
 
         System.out.println(" registro de estudiantes en universidad");

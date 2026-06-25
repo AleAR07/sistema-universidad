@@ -8,17 +8,12 @@ public class Estudiante extends Persona {
     private LocalDate fechaingreso;
     private Cuentaahorro cuenta;
 
-    public Estudiante(String nombre, String direccion, LocalDate fechanacimiento, String matricula, double promedio, LocalDate fechaingreso) {
+    public Estudiante(String nombre, LocalDate fechanacimiento, String direccion, String matricula, double promedio, LocalDate fechaingreso, Cuentaahorro cuenta) {
         super(nombre, fechanacimiento, direccion);
         this.matricula = matricula;
         this.promedio = promedio;
         this.fechaingreso = fechaingreso;
         this.cuenta = null;
-    }
-
-    public Estudiante(String nombre, String direccion, LocalDate fechanacimiento, String matricula, double promedio, LocalDate fechaingreso, Cuentaahorro cuenta) {
-        this(nombre, direccion, fechanacimiento, matricula, promedio, fechaingreso);
-        this.cuenta = cuenta;
     }
 
     //metodos

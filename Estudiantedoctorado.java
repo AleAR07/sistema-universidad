@@ -7,15 +7,8 @@ public class Estudiantedoctorado extends Estudiante {
     private String tematesis;
     private String directortesis;
 
-    public Estudiantedoctorado(String nombre, LocalDate fechanacimiento, String direccion, String matricula, double promedio, LocalDate fechaingreso, String programa, String tematesis, String directortesis) {
-        super(nombre, direccion, fechanacimiento, matricula, promedio, fechaingreso);
-        this.programa = programa;
-        this.tematesis = tematesis;
-        this.directortesis = directortesis;
-    }
-
-    public Estudiantedoctorado(String nombre, LocalDate fechanacimiento, String direccion, String matricula, double promedio, LocalDate fechaingreso, String programa, String tematesis, String directortesis, Cuentaahorro cuenta) {
-        super(nombre, direccion, fechanacimiento, matricula, promedio, fechaingreso, cuenta);
+    public Estudiantedoctorado(String nombre, LocalDate fechanacimiento, String direccion, String matricula, double promedio, LocalDate fechaingreso, Cuentaahorro cuenta, String programa, String tematesis, String directortesis) {
+        super(nombre, fechanacimiento, direccion, matricula, promedio, fechaingreso, cuenta);
         this.programa = programa;
         this.tematesis = tematesis;
         this.directortesis = directortesis;

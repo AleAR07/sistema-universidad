@@ -18,8 +18,8 @@ public class Main {
         Cuentaahorro cuentaDoctorado = new Cuentaahorro(12000, "44889966", 1500, 0, 4.5);
 
         //trabajador PAS CON CUENTA CORRIENTE
-        Pas trabajadorPas = new Pas("Carlos Gomez", "AV. CENTRAL 123", LocalDate.of(2010, 4, 12), "Administrador en sistemas", 16000, LocalDate.of(2020, 3, 8), "escolares", 2, "matutino", cuentaPas);
-        PDI profesorpdoPdi = new PDI("ARMANDO LOPEZ", "SANTA MARTA", LocalDate.of(2003, 3, 1), "profesor titular", 5000, LocalDate.of(2015, 5, 9), "Titular c", "computacion", 12, cuentaPDI);
+        Pas trabajadorPas = new Pas("Carlos Gomez", "AV. CENTRAL 123", LocalDate.of(2010, 4, 12),LocalDate.of(2020, 3, 8), 16000, "Administrador en sistemas",cuentaPas, "escolares", 2, "matutino");
+        PDI profesorpdoPdi = new PDI("ARMANDO LOPEZ", "SANTA MARTA", LocalDate.of(2003, 3, 1),  LocalDate.of(2015, 5, 9), 5000, "profesor titular",cuentaPDI, "Titular c", "computacion", 12);
 
         //instancia doctores 
         Doctor doc1 = new Doctor("inteligencia artificial", "UAM ", 2022);

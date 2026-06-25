@@ -7,14 +7,7 @@ public class PDI extends Trabajador {
     private String especialidad;
     private int horasDocencia;
 
-    public PDI(String nombre, String direccion, LocalDate fechanacimiento, String puesto, double salario, LocalDate fechaingreso, String categoria, String especialidad, int horasDocencia) {
-        super(nombre, direccion, fechanacimiento, fechaingreso, salario, puesto);
-        this.categoria = categoria;
-        this.especialidad = especialidad;
-        this.horasDocencia = horasDocencia;
-    }
-
-    public PDI(String nombre, String direccion, LocalDate fechanacimiento, String puesto, double salario, LocalDate fechaingreso, String categoria, String especialidad, int horasDocencia, Cuentacorriente cuenta) {
+    public PDI(String nombre, String direccion, LocalDate fechanacimiento, LocalDate fechaingreso, double salario, String puesto, Cuentacorriente cuenta, String categoria, String especialidad, int horasDocencia) {
         super(nombre, direccion, fechanacimiento, fechaingreso, salario, puesto, cuenta);
         this.categoria = categoria;
         this.especialidad = especialidad;

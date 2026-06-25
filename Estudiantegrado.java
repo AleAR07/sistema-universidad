@@ -7,15 +7,8 @@ public class Estudiantegrado extends Estudiante {
     private int creditos;
     private boolean serviciosocial;
 
-    public Estudiantegrado(String nombre, LocalDate fechanacimiento, String direccion, String matricula, double promedio, LocalDate fechaingreso, String titulacion, int creditos, boolean serviciosocial) {
-        super(nombre, direccion, fechanacimiento, matricula, promedio, fechaingreso);
-        this.titulacion = titulacion;
-        this.creditos = creditos;
-        this.serviciosocial = serviciosocial;
-    }
-
-    public Estudiantegrado(String nombre, LocalDate fechanacimiento, String direccion, String matricula, double promedio, LocalDate fechaingreso, String titulacion, int creditos, boolean serviciosocial, Cuentaahorro cuenta) {
-        super(nombre, direccion, fechanacimiento, matricula, promedio, fechaingreso, cuenta);
+    public Estudiantegrado(String nombre, LocalDate fechanacimiento, String direccion, String matricula, double promedio, LocalDate fechaingreso, Cuentaahorro cuenta, String titulacion, int creditos, boolean serviciosocial) {
+        super(nombre, fechanacimiento, direccion, matricula, promedio, fechaingreso, cuenta);
         this.titulacion = titulacion;
         this.creditos = creditos;
         this.serviciosocial = serviciosocial;

@@ -56,10 +56,10 @@ public class Main {
         System.out.println();
         //estudiantes 
 
-        Estudiantegrado estGrado = new Estudiantegrado("laura", LocalDate.of(2003, 7, 19), "Chimalhuacan", "22353788", 9.2, LocalDate.of(2023, 9, 18), "tesis", 310, true, cuentaGrado);
+        Estudiantegrado estGrado = new Estudiantegrado("laura", LocalDate.of(2003, 7, 19), "Chimalhuacan", "22353788", 9.2, LocalDate.of(2023, 9, 18), cuentaGrado, "tesis", 310, true);
         //doctorado
 
-        Estudiantedoctorado estDoc = new Estudiantedoctorado("luiz martinez", LocalDate.of(1996, 1, 5), "universidad 500", "262626777", 9.6, LocalDate.of(2026, 6, 8), "ciencias de la computacion", "criptografia", "armando lopez", cuentaDoctorado);
+        Estudiantedoctorado estDoc = new Estudiantedoctorado("luiz martinez", LocalDate.of(1996, 1, 5), "universidad 500", "262626777", 9.6, LocalDate.of(2026, 6, 8), cuentaDoctorado, "ciencias de la computacion", "criptografia", "armando lopez");
         //registrar estudiantes 
 
         System.out.println(" registro de estudiantes en universidad");

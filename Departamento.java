@@ -40,6 +40,18 @@ public class Departamento {
         }
     }
 
+    //implementacion de busqueda de profesores de forma recursiva 
+    public int buscarproferecursivo(PDI profesor, int indice) {
+        if (indice >= contadorprofesores) {
+            return -1;
+            //no hubo 
+        }
+        if (this.profesores[indice].equals(profesor)) {
+            return indice;
+        }
+        return buscarproferecursivo(profesor, indice + 1);
+    }
+
     @Override
     public String toString() {
         return "Departamento{" + "nombre=" + nombre + ", codigo=" + codigo + ", ubicacion=" + ubicacion + '}';

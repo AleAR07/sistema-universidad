@@ -48,6 +48,39 @@ public class Universidad {
         }
     }
 
+    //busqueda de estudiantes recursivos 
+    public int buscarestuRecursivo(Estudiante estudiante, int indice) {
+        if (indice >= contadorestudiantes) {
+            return -1;
+        }
+        if (this.estudiantes[indice].equals(estudiante)) {
+            return indice;
+        }
+        return buscarestuRecursivo(estudiante, indice + 1);
+    }
+
+    //busqueda de trabajadores recursivos
+    public int buscartrabRecursivo(Trabajador trabajador, int indice) {
+        if (indice >= contadortrabajadores) {
+            return -1;
+        }
+        if (this.trabajadores[indice].equals(trabajador)) {
+            return indice;
+        }
+        return buscartrabRecursivo(trabajador, indice + 1);
+    }
+
+    //busqueda de departamentos recursivos
+    public int buscardepRecursivo(Departamento departamento, int indice) {
+        if (indice >= contadordepartamentos) {
+            return -1;
+        }
+        if (this.departamentos[indice].equals(departamento)) {
+            return indice;
+        }
+        return buscardepRecursivo(departamento, indice + 1);
+    }
+
     @Override
     public String toString() {
         return "Universidad{" + "nombre=" + nombre + ", ciudad=" + ciudad + ", fundacion=" + fundacion + '}';

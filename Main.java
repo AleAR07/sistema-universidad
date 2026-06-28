@@ -8,6 +8,8 @@ public class Main {
         //instanciar universidad
 
         Universidad miuniversidad = new Universidad("universidad autonoma", "ciudad de mexico", 1994);
+        //estudiantes 
+        Estudiante estudiante1 = new Estudiante("Juan Perez", LocalDate.of(2000, 5, 15), "Calle Falsa 123", "A001", 8.5, LocalDate.of(2018, 9, 1), null);
         //crea departamentos 
 
         Departamento departamentocomputacion = new Departamento("computacion", "num189", "edificio AT");
@@ -18,8 +20,8 @@ public class Main {
         Cuentaahorro cuentaDoctorado = new Cuentaahorro(12000, "44889966", 1500, 0, 4.5);
 
         //trabajador PAS CON CUENTA CORRIENTE
-        Pas trabajadorPas = new Pas("Carlos Gomez", "AV. CENTRAL 123", LocalDate.of(2010, 4, 12),LocalDate.of(2020, 3, 8), 16000, "Administrador en sistemas",cuentaPas, "escolares", 2, "matutino");
-        PDI profesorpdoPdi = new PDI("ARMANDO LOPEZ", "SANTA MARTA", LocalDate.of(2003, 3, 1),  LocalDate.of(2015, 5, 9), 5000, "profesor titular",cuentaPDI, "Titular c", "computacion", 12);
+        Pas trabajadorPas = new Pas("Carlos Gomez", "AV. CENTRAL 123", LocalDate.of(2010, 4, 12), LocalDate.of(2020, 3, 8), 16000, "Administrador en sistemas", cuentaPas, "escolares", 2, "matutino");
+        PDI profesorpdoPdi = new PDI("ARMANDO LOPEZ", "SANTA MARTA", LocalDate.of(2003, 3, 1), LocalDate.of(2015, 5, 9), 5000, "profesor titular", cuentaPDI, "Titular c", "computacion", 12);
 
         //instancia doctores 
         Doctor doc1 = new Doctor("inteligencia artificial", "UAM ", 2022);
@@ -78,8 +80,16 @@ public class Main {
         estDoc.publicararticulo();
         System.out.println("monto de beca luis " + estDoc.calcularbeca());
         System.out.println();
-        //resumen 
+        //busqueda de estudiante de forma recursiva
+        System.out.println("buscando al estudiante " + estudiante1.getnombre() + " de forma recursiva");
+        int posicionestudiante = miuniversidad.buscarestudianteRecursivo(estudiante1, 0);
+        if (posicionestudiante != -1) {
+            System.out.println("el estudiante " + estudiante1.getnombre() + " fue encontrado en la posicion " + posicionestudiante);
+        } else {
+            System.out.println("el estudiante " + estudiante1.getnombre() + " no fue encontrado");
+        }
 
+        //resumen 
         System.out.println("RESUMEN DEL SISTEMA ");
         System.out.println(miuniversidad.toString());
         System.out.println(departamentocomputacion.toString());

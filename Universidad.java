@@ -49,14 +49,14 @@ public class Universidad {
     }
 
     //busqueda de estudiantes recursivos 
-    public int buscarestuRecursivo(Estudiante estudiante, int indice) {
+    public int buscarestudianteRecursivo(Estudiante estudiante, int indice) {
         if (indice >= contadorestudiantes) {
             return -1;
         }
         if (this.estudiantes[indice].equals(estudiante)) {
             return indice;
         }
-        return buscarestuRecursivo(estudiante, indice + 1);
+        return buscarestudianteRecursivo(estudiante, indice + 1);
     }
 
     //busqueda de trabajadores recursivos

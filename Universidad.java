@@ -4,9 +4,11 @@ public class Universidad {
     private String nombre;
     private String ciudad;
     private int fundacion;
-    private Estudiante[] estudiantes;
-    private Trabajador[] trabajadores;
-    private Departamento[] departamentos;
+    private ArrayList<Estudiante> estudiantes;
+    private ArrayList<Trabajador> trabajadores;
+    private ArrayList<Departamento> departamentos;
+
+   
 
     private int contadorestudiantes;
     private int contadortrabajadores;
@@ -17,9 +19,9 @@ public class Universidad {
         this.ciudad = ciudad;
         this.fundacion = fundacion;
 
-        this.estudiantes = new Estudiante[100];
-        this.trabajadores = new Trabajador[50];
-        this.departamentos = new Departamento[10];
+       this.estudiantes=new ArrayList<>();
+       this.trabajadores=new ArrayList<>();
+       this.departamentos=new ArrayList<>();
         this.contadorestudiantes = 0;
         this.contadortrabajadores = 0;
         this.contadordepartamentos = 0;
@@ -27,25 +29,13 @@ public class Universidad {
 
     //metodos
     public void registrarestudiante(Estudiante estudiante) {
-        if (contadorestudiantes < estudiantes.length) {
-            estudiantes[contadorestudiantes] = estudiante;
-            contadorestudiantes++;
-            System.out.println("estudiante " + estudiante.getnombre() + " se ha registrado correctamente");
-
-        } else {
-            System.out.println("no hay espacio para registar");
-        }
+        this.estudiantes.agregarElemento(estudiante);
+        System.out.println("estudiante agregado "+estudiante.getnombre());
     }
 
     public void contrarartrabajadores(Trabajador trabajador) {
-        if (contadortrabajadores < trabajadores.length) {
-            trabajadores[contadortrabajadores] = trabajador;
-            contadortrabajadores++;
-            System.out.println("trabajador " + trabajador.getnombre() + "registrado (" + trabajador.getpuesto() + ")");
-
-        } else {
-            System.out.println("no hay vacantes de trabajadores ");
-        }
+        this.trabajadores.agregarElemento(trabajador);
+        System.out.println("trabajador agregado "+trabajador.getnombre());
     }
 
     //busqueda de estudiantes recursivos 
@@ -53,7 +43,7 @@ public class Universidad {
         if (indice >= contadorestudiantes) {
             return -1;
         }
-        if (this.estudiantes[indice].equals(estudiante)) {
+        if ((this.estudiantes.consultar(indice).equals(estudiante))) {
             return indice;
         }
         return buscarestudianteRecursivo(estudiante, indice + 1);
@@ -64,7 +54,7 @@ public class Universidad {
         if (indice >= contadortrabajadores) {
             return -1;
         }
-        if (this.trabajadores[indice].equals(trabajador)) {
+        if (this.trabajadores.consultar(indice).equals(trabajador)) {
             return indice;
         }
         return buscartrabRecursivo(trabajador, indice + 1);
@@ -75,7 +65,7 @@ public class Universidad {
         if (indice >= contadordepartamentos) {
             return -1;
         }
-        if (this.departamentos[indice].equals(departamento)) {
+        if (this.departamentos.consultar(indice).equals(departamento)) {
             return indice;
         }
         return buscardepRecursivo(departamento, indice + 1);
@@ -111,30 +101,25 @@ public class Universidad {
         this.fundacion = fundacion;
     }
 
-    public Estudiante[] getEstudiantes() {
+   public ArrayList<Estudiante> getEstudiantes() {
         return estudiantes;
     }
 
-    public void setEstudiantes(Estudiante[] estudiantes) {
+    public void setEstudiantes(ArrayList<Estudiante> estudiantes) {
         this.estudiantes = estudiantes;
     }
 
-    public Trabajador[] getTrabajadores() {
+    public ArrayList<Trabajador> getTrabajadores() {
         return trabajadores;
     }
 
-    public void setTrabajadores(Trabajador[] trabajadores) {
+    public void setTrabajadores(ArrayList<Trabajador> trabajadores) {
         this.trabajadores = trabajadores;
     }
 
-    public Departamento[] getDepartamentos() {
+    public ArrayList<Departamento> getDepartamentos() {
         return departamentos;
     }
-
-    public void setDepartamentos(Departamento[] departamentos) {
-        this.departamentos = departamentos;
-    }
-
     public int getContadorestudiantes() {
         return contadorestudiantes;
     }

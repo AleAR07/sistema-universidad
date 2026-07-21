@@ -14,7 +14,7 @@ public class Trabajador extends Persona {
         this.salario = salario;
         this.puesto = puesto;
         this.fechaingreso = fechaingreso;
-        this.cuenta=cuenta;
+        this.cuenta=null;
 
     }
 

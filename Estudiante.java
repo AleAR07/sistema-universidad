@@ -13,7 +13,7 @@ public class Estudiante extends Persona {
         this.matricula = matricula;
         this.promedio = promedio;
         this.fechaingreso = fechaingreso;
-        this.cuenta = cuenta;
+        this.cuenta = null;
     }
 
     //metodos

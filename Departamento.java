@@ -5,38 +5,27 @@ public class Departamento {
     private String codigo;
     private String ubicacion;
     //arreglo de profesores 
-    private PDI[] profesores;
+    private ArrayList<PDI> profesores;
     private int contadorprofesores;
 
     public Departamento(String nombre, String codigo, String ubicacion) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.ubicacion = ubicacion;
-        this.profesores = new PDI[20];
+        this.profesores=new ArrayList<>();
         this.contadorprofesores = 0;
     }
 
     //metodos 
     public void asignarprofesor(PDI profesor) {
-        if (contadorprofesores < profesores.length) {
-            profesores[contadorprofesores] = profesor;
-            contadorprofesores++;
-            System.out.println("profesor " + profesor.getnombre() + "asignado al departamento de " + this.nombre);
-
-        } else {
-            System.out.println("no se puede asignar al profesor ");
-        }
-
+       profesores.agregarElemento(profesor);
+        System.out.println("nuevo profesor "+profesor.getnombre()+"agregado a "+nombre);
     }
 
     public void listapersonal() {
         System.out.println("personal del departamento " + nombre);
-        if (contadorprofesores == 0) {
-            System.out.println("no hay profesores asignados ");
-        } else {
-            for (int i = 0; i < contadorprofesores; i++) {
-                System.out.println("- " + profesores[i].toString());
-            }
+        for(int i=0;i<this.profesores.numElementos();i++){
+            System.out.println(this.profesores.consultar(i).toString());
         }
     }
 
@@ -46,7 +35,7 @@ public class Departamento {
             return -1;
             //no hubo 
         }
-        if (this.profesores[indice].equals(profesor)) {
+        if (this.profesores.consultar(indice).equals(profesor)) {
             return indice;
         }
         return buscarproferecursivo(profesor, indice + 1);
@@ -82,13 +71,12 @@ public class Departamento {
         this.ubicacion = ubicacion;
     }
 
-    public PDI[] getProfesores() {
-        return profesores;
-    }
-
-    public void setProfesores(PDI[] profesores) {
-        this.profesores = profesores;
-    }
+   public ArrayList<PDI> getprofesores(){
+    return profesores;
+   }
+   public void setprofesores(ArrayList<PDI> profesores){
+    this.profesores= profesores;
+   }
 
     public int getContadorprofesores() {
         return contadorprofesores;

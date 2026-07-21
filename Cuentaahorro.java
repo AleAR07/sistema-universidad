@@ -17,7 +17,15 @@ public class Cuentaahorro extends Cuentabancaria {
         return interses;
 
     }
-
+    public void aplicarInteres(){
+        double interes = calcularIntereses();
+        if (interes > 0) {
+            depositar(interes);
+        } else {
+            System.out.println("No hay intereses por aplicar (saldo o tasa en 0).");
+        }
+    }
+    
     public double getMontoLimite() {
         return montoLimite;
     }

@@ -2,7 +2,7 @@
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Trabajador extends Persona {
+public class Trabajador extends Persona  {
 
     private LocalDate fechaingreso;
     private double salario;
@@ -65,6 +65,17 @@ public class Trabajador extends Persona {
 
     public void setCuenta(Cuentacorriente cuenta) {
         this.cuenta = cuenta;
+    }
+    @Override
+    public boolean equals (Object obj){
+     if (obj == null){
+     return false;
+     }
+     if (!(obj instanceof Trabajador)){
+     return false;
+     }
+     Trabajador otro = (Trabajador) obj;
+     return this.getnombre().equals(otro.getnombre());
     }
 
     @Override

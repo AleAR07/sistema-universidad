@@ -213,7 +213,7 @@ public class LinkedList<E> implements Lista<E> {
                 return tmp;
             }
 
-        }
+        };
     }
 
 }

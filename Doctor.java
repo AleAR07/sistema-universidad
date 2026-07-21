@@ -52,5 +52,16 @@ public class Doctor {
     public void setAnioobtencion(int anioobtencion) {
         this.anioobtencion = anioobtencion;
     }
+    @Override
+    public boolean equals(Object obj){
+        if (this == obj){
+            return true;
+        }
+        if (!(obj instanceof Doctor)){
+            return false;
+        }
+        Doctor other = (Doctor) obj;
+        return especialidad.equals(other.especialidad) && universidad.equals(other.universidad) && anioobtencion == other.anioobtencion;
+    }
 
 }

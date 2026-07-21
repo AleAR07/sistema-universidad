@@ -1,7 +1,7 @@
 
 import java.time.LocalDate;
 
-public class Estudiante extends Persona {
+public class Estudiante extends Persona implements Comparable<Estudiante> {
 
     private String matricula;
     private double promedio;
@@ -68,6 +68,21 @@ public class Estudiante extends Persona {
 
     public void setCuenta(Cuentaahorro cuenta) {
         this.cuenta = cuenta;
+    }
+    @Override
+   public int compareTo(Estudiante otro) {
+       return this.matricula.compareTo(otro.matricula);
+   }
+   @Override
+   public boolean equals(Object obj){
+     if (obj == null){
+     return false;
+     }
+     if (!(obj instanceof Estudiante)){
+     return false;
+     }
+     Estudiante otro = (Estudiante) obj;
+     return this.matricula.equals(otro.matricula);
     }
 
     @Override
